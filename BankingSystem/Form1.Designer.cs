@@ -71,6 +71,7 @@
             OwnerTxt.Name = "OwnerTxt";
             OwnerTxt.Size = new Size(241, 43);
             OwnerTxt.TabIndex = 3;
+            OwnerTxt.TextChanged += OwnerTxt_TextChanged;
             // 
             // BankAccountGrid
             // 
@@ -133,6 +134,7 @@
             Margin = new Padding(6);
             Name = "Form1";
             Text = "Banking System";
+            DoubleClick += Form1_DoubleClick;
             ((System.ComponentModel.ISupportInitialize)AmountNumeric).EndInit();
             ((System.ComponentModel.ISupportInitialize)BankAccountGrid).EndInit();
             ResumeLayout(false);

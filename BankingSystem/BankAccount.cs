@@ -7,7 +7,7 @@ namespace BankingSystem
     public class BankAccount
     {
         public string Owner { get; set; }
-        public Guid AccountNumber { get; }
+        public Guid AccountNumber { get; private set; }
         public decimal Balance { get; private set; }
 
         private const decimal MaxDeposit = 10000;
@@ -20,29 +20,50 @@ namespace BankingSystem
             Balance = 0;
         }
 
-        public void Deposit(decimal amount)
+        public BankAccount(Guid accNo, string owner, decimal balance)
+        {
+            AccountNumber = accNo;
+            Owner = owner;
+            Balance = balance;
+        }
+
+        public string Deposit(decimal amount)
         {
             if (amount <= 0)
-                throw new Exception("Deposit amount must be positive");
+            {
+                return "Deposit amount must be positive";
+            }
 
-            if (amount > MaxDeposit)
-                throw new Exception("Deposit limit reached");
+            if (amount > 10000)
+            {
+                return "Deposit Limit Reached";
+            }
 
             Balance += amount;
+            return "Deposit Successful";
         }
 
-        public void Withdraw(decimal amount)
+
+        public string Withdraw(decimal amount)
         {
             if (amount <= 0)
-                throw new Exception("Withdrawal amount must be positive");
-
-            if (amount > MaxWithdraw)
-                throw new Exception("Withdrawal limit reached");
+            {
+                return "Withdrawal amount must be positive";
+            }
 
             if (amount > Balance)
-                throw new Exception("Insufficient balance");
+            {
+                return "Insufficient balance";
+            }
+
+            if (amount > 5000)
+            {
+                return "Withdrawal limit reached";
+            }
 
             Balance -= amount;
+            return "Withdrawal Successful";
         }
+
     }
 }
