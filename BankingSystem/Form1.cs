@@ -167,10 +167,10 @@ namespace BankingSystem
         }
 
         private void Form1_DoubleClick(object sender, EventArgs e)
-        {
-            LoadAccountsFromDatabase();
-            RefreshGrid();
-        }
+{
+    LoadAccountsFromDatabase();
+    RefreshGrid();
+}
 
         private void OwnerTxt_TextChanged(object sender, EventArgs e)
         {
