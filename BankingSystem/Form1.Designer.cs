@@ -3,14 +3,13 @@
     partial class Form1
     {
         /// <summary>
-        ///  Required designer variable.
+        /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
         /// <summary>
-        ///  Clean up any resources being used.
+        /// Clean up any resources being used.
         /// </summary>
-        /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
         protected override void Dispose(bool disposing)
         {
             if (disposing && (components != null))
@@ -23,8 +22,7 @@
         #region Windows Form Designer generated code
 
         /// <summary>
-        ///  Required method for Designer support - do not modify
-        ///  the contents of this method with the code editor.
+        /// Required method for Designer support.
         /// </summary>
         private void InitializeComponent()
         {
@@ -49,7 +47,6 @@
             label1.Size = new Size(99, 38);
             label1.TabIndex = 0;
             label1.Text = "Owner";
-            label1.Click += label1_Click;
             // 
             // label2
             // 
@@ -64,11 +61,9 @@
             // 
             AmountNumeric.Location = new Point(18, 415);
             AmountNumeric.Maximum = new decimal(new int[] { 9999999, 0, 0, 0 });
-            AmountNumeric.Minimum = new decimal(new int[] { 99999999, 0, 0, int.MinValue });
             AmountNumeric.Name = "AmountNumeric";
             AmountNumeric.Size = new Size(211, 43);
             AmountNumeric.TabIndex = 2;
-            AmountNumeric.ValueChanged += AmountNumeric_ValueChanged;
             // 
             // OwnerTxt
             // 
@@ -76,14 +71,17 @@
             OwnerTxt.Name = "OwnerTxt";
             OwnerTxt.Size = new Size(241, 43);
             OwnerTxt.TabIndex = 3;
-            OwnerTxt.TextChanged += OwnerTxt_TextChanged;
             // 
             // BankAccountGrid
             // 
+            BankAccountGrid.AllowUserToAddRows = false;
+            BankAccountGrid.AllowUserToDeleteRows = false;
             BankAccountGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             BankAccountGrid.Location = new Point(575, 124);
             BankAccountGrid.Name = "BankAccountGrid";
+            BankAccountGrid.ReadOnly = true;
             BankAccountGrid.RowHeadersWidth = 51;
+            BankAccountGrid.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             BankAccountGrid.Size = new Size(598, 260);
             BankAccountGrid.TabIndex = 4;
             // 
@@ -134,7 +132,7 @@
             Font = new Font("Segoe UI", 16.2F, FontStyle.Regular, GraphicsUnit.Point, 0);
             Margin = new Padding(6);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Banking System";
             ((System.ComponentModel.ISupportInitialize)AmountNumeric).EndInit();
             ((System.ComponentModel.ISupportInitialize)BankAccountGrid).EndInit();
             ResumeLayout(false);
